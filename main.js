@@ -128,7 +128,7 @@ app.get('/aireon',  (req, res) => {
 	 localStorage.setItem('aire', 'on');
      mcp.digitalWrite(AIRE, mcp.LOW); 
 // Answer
-     res.send('aireon');
+     res.send('ON');
      
 });
 
@@ -138,7 +138,7 @@ app.get('/aireoff', (req, res) => {
      localStorage.setItem('aire', 'off');
      mcp.digitalWrite(AIRE, mcp.HIGH); 
 
-      res.send('aireoff');
+      res.send('OFF');
 // Answer
     
 });
@@ -149,7 +149,7 @@ app.get('/auxon',  (req, res) => {
 	 localStorage.setItem('aux', 'on');
      mcp.digitalWrite(AUX, mcp.HIGH); 
 // Answer
-     res.send('auxon');
+     res.send('ON');
      
 });
 
@@ -159,7 +159,7 @@ app.get('/auxoff', (req, res) => {
      localStorage.setItem('aux', 'off');
      mcp.digitalWrite(AUX, mcp.LOW); 
 
-      res.send('auxoff');
+      res.send('OFF');
 // Answer
     
 });
@@ -242,11 +242,6 @@ app.get('/ph', (req, res) => {
 
     
 });
-
-
-
-
-
 
 app.get('/tempext', (req, res) => {
 
@@ -456,8 +451,7 @@ for (let i = 0; i < 16; i++) {
   //mcp.pinMode(i, mcp.INPUT_PULLUP); //if you want them to be pullup inputs
 }
 
-
-
+mcp.digitalWrite(AUX, mcp.LOW); 
 
 console.log("Local Storage ...");
 if (typeof localStorage === "undefined" || localStorage === null) {
@@ -483,9 +477,9 @@ if (typeof localStorage === "undefined" || localStorage === null) {
  	 mcp.digitalWrite(LUZ80, mcp.HIGH); 
 
  if(localStorage.getItem('aux') ==='on')
- 	 mcp.digitalWrite(AUX, mcp.LOW); 
+ 	 mcp.digitalWrite(AUX, mcp.HIGH); 
  if(localStorage.getItem('aux') ==='off')
- 	 mcp.digitalWrite(AUX, mcp.HIGH);  	 	 	
+ 	 mcp.digitalWrite(AUX, mcp.LOW);  	 	 	
 	 	 	
 
 // Start server

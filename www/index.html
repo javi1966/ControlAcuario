@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css"/> -->
-        <link rel="stylesheet" type="text/css" href="https://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.css">
+         <link rel="stylesheet" type="text/css" href="https://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.css"> 
         <script  src="js/jquery-2.1.4.min.js"></script>
         <script  src="js/jquery.mobile-1.4.5.min.js"></script>
         <link rel="stylesheet" type="text/css" href="css/index.css"/>
@@ -26,8 +26,8 @@
 
             <div role ="main" class="ui-content">
 
-            	<br/><br/>
-
+            
+      </br> </br>
             	
                 <!--
                 <button id="btnLuz40" class="ui-btn ui-corner-all">Luz 40l</button>
@@ -37,74 +37,88 @@
                 <button id="btnAire"  class="ui-btn ui-corner-all">Aireador</button>
                 <button id="btnAux"  class="ui-btn ui-corner-all">Auxiliar</button> -->
 
-               
-                 <center>
-                       <div class="ui-field-contain">
+        <table>
+  
+                 <tr>
+                      
                        	
-                        <label for="flipLuz40">Luz 40l:</label>
+                        <td><label for="flipLuz40">Luz 40l:</label></td>
+                        <td>
                         <select type="checkbox" id="swLuz40" data-role="flipswitch">
                             <option value="off">Off</option>
                             <option value="on">On</option>
                         </select>
+                        </td>
                          
-                    </div>
+                    
                
-                 </center>
+                </tr> 
 
 
-                <center>
-                     <div class="ui-field-contain">
-                        <label for="flipLuz80">Luz 80l:</label>
+                <tr>
+                     
+                       <td> <label for="flipLuz80">Luz 80l:</label></td>
+                       <td>
                         <select type="checkbox" id="swLuz80" data-role="flipswitch">
                             <option value="off">Off</option>
                             <option value="on">On</option>
                         </select>
-                    </div>
-                </center>
+                        </td>
+                    
+               
+                </tr>
 
-
-                <center>
-                     <div class="ui-field-contain">
-                        <label for="flipFil40">Filtro 40l:</label>
+                <tr>
+                    
+                        <td><label for="flipFil40">Filtro 40l:</label></td>
+                        <td>
                         <select type="checkbox" id="swFil40" data-role="flipswitch">
-                            <option value="off">Off</option>
-                            <option value="on">On</option>
+                            <option value="off">On</option>
+                            <option value="on">Off</option>
                         </select>
-                    </div>
-                </center>
+                       </td>
+                   
+               
+                </tr>
 
-
-                <center>
-                     <div class="ui-field-contain">
-                        <label for="flipFil80">Filtro 80l:</label>
+                 <tr>
+                     
+                        <td><label for="flipFil80">Filtro 80l:</label></td>
+                        <td>
                         <select type="checkbox" id="swFil80" data-role="flipswitch">
+                            <option value="off">On</option>
+                            <option value="on">Off</option>
+                        </select>
+                        </td>
+                    
+                  </tr>   
+                
+
+                <tr>
+                     
+                        <td><label for="swCalentador">Calentador:</label></td>
+                        <td>
+                        <select type="checkbox" id="swCalentador" data-role="flipswitch">
                             <option value="off">Off</option>
                             <option value="on">On</option>
                         </select>
-                    </div>
-                </center>
-
-                <center>
-                     <div class="ui-field-contain">
-                        <label for="flipAire">Aireador:</label>
+                        </td>
+                   
+               </tr>
+               
+                <tr>
+                     
+                        <td><label for="swAire">Aireador:</label></td>
+                        <td>
                         <select type="checkbox" id="swAire" data-role="flipswitch">
                             <option value="off">Off</option>
                             <option value="on">On</option>
                         </select>
-                    </div>
-                </center>
-               
-                <center>
-                     <div class="ui-field-contain">
-                        <label for="swAux">Auxiliar:</label>
-                        <select type="checkbox" id="swAux" data-role="flipswitch">
-                            <option value="off">Off</option>
-                            <option value="on">On</option>
-                        </select>
-                    </div>
-                </center>
+                        </td>
+                    
+                </tr>
                 
- 
+   </table>
 
                <center>
                  

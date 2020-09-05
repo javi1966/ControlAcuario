@@ -91,7 +91,7 @@
     color: white !important;
    /* background-color: black !important;*/
     /*  display: inline !important;*/ 
-    background-image: url("../img/fondo_negro.jpg") !important; 
+    background-image: url("../img/fondo_cuadricula.jpg") !important;
 }
 
 
@@ -128,6 +128,18 @@
   margin-right: 2em;
 }
 
+
+table {
+
+	table-layout:  :fixed;
+	margin: 0 auto;
+}
+
+th,td{
+
+	width:100px;
+	word-wrap:break-word;
+}
 
 
 

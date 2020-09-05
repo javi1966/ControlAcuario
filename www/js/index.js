@@ -28,8 +28,8 @@ let bReleLuz40 = false;
 let bReleLuz80 = false;
 let bFiltro80  = false;
 let bFiltro40  = false;
-let bAire      = false;
-let bAux       = false;   
+let bCalentador      = false;
+let bAire       = false;   
 
 const app = {
     
@@ -190,8 +190,8 @@ const app = {
         swLuz80.change = app.ControlReles;
         swFil40.change = app.ControlReles;
         swFil80.change = app.ControlReles;
-        swAire.change = app.ControlReles;
-        swAux.change=app.ControlReles;
+        swCalentador.change = app.ControlReles;
+        swAire.change=app.ControlReles;
         btnReboot.onclick=app.Reboot;
         btnAbout.onclick = app.about;
         btnCerrar.onclick = app.Cerrar;
@@ -372,19 +372,19 @@ const app = {
                          });
 
                 break;
-            case "swAire":
+            case "swCalentador":
 
-                bAire = !bAire;
+                bCalentador = !bCalentador;
 
                 
 
-                $.get(bAire ? "/aireon" : "/aireoff")
+                $.get(bCalentador ? "/aireon" : "/aireoff")
                       
                         
                         .done(function (data){
                        // function (data,status) {
-                            toast("Aire: " + data );
-                            console.log("Aire: " + data);
+                            toast("Calentador: " + data );
+                            console.log("Calentador: " + data);
                         })
                         .fail(function(error) {
                                 alert("Error: "+error.responseText);
@@ -394,21 +394,21 @@ const app = {
                 break;
 
             
-             case "swAux":
+             case "swAire":
 
                // bAux = !bAux;
 
-                bAux ^= true;
+                bAire ^= true;
 
                 
 
-                $.get(bAux ? "/auxon" : "/auxoff")
+                $.get(bAire ? "/auxon" : "/auxoff")
                       
-                        
+                
                         .done(function (data){
-                       // function (data,status) {
-                            toast("Aux: " + data );
-                            console.log("Aux: " + data);
+                       
+                            toast("Aire: " + data );
+                            console.log("Aire: " + data);
                         })
                         .fail(function(error) {
                                 alert("Error: "+error.responseText);
@@ -437,8 +437,8 @@ const app = {
                        $('#swLuz80').val(data.luz80).flipswitch('refresh');
                        $('#swFil40').val(data.fil40).flipswitch('refresh');
                        $('#swFil80').val(data.fil80).flipswitch('refresh');
-                       $('#swAire').val(data.aire).flipswitch('refresh');
-                       $('#swAux').val(data.aux).flipswitch('refresh');   
+                       $('#swCalentador').val(data.aire).flipswitch('refresh');
+                       $('#swAire').val(data.aux).flipswitch('refresh');   
 
                            
                     console.log(`Estado: Aire ${data.aire},Aux ${data.aux},Fitro40 ${data.fil40},Filtro80 ${data.fil80},Luz40 ${data.luz40},Luz80 ${data.luz80} `);
