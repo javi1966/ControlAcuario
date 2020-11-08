@@ -17,10 +17,10 @@ const ds18b20_Ext = '28-0000025f0d97';
 const FILTRO = 0;
 const BOMBA = 1;
 const AIRE = 2;
-const LUZ = 6;
+const LUZ = 3;
 const LUZESP = 4;
 const MEDIDA = 5;
-const AUX = 3;
+const AUX = 6;
 const CALENTADOR = 7;
 
 

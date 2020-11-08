@@ -314,13 +314,12 @@ const app = {
             case "swLuzEsp":
 
                 bReleLuzEsp = !bReleLuzEsp;
-
-
+                $("#lblLuzEsp").css(bReleLuzEsp?{"color":"white"}:{"color":"gray"});
 
                 $.get(bReleLuzEsp ? "/luzespon" : "/luzespoff")
 
                     .done(function (data) {
-                        // function (data,status) {
+                       
                         toast("Luz Esp: " + data);
                         console.log("Luz Esp.: " + data);
                     })
@@ -336,7 +335,7 @@ const app = {
 
                 bReleLuz = !bReleLuz;
 
-
+                $("#lblLuz").css(bReleLuz?{"color":"white"}:{"color":"gray"});
 
                 $.get(bReleLuz ? "/luzon" : "/luzoff")
 
@@ -357,6 +356,7 @@ const app = {
 
                 bBomba = !bBomba;
 
+                $("#lblBomba").css(bBomba?{"color":"white"}:{"color":"gray"});
 
                 $.get(bBomba ? "/bombaon" : "/bombaoff")
                     .done((data) => {
@@ -373,7 +373,8 @@ const app = {
             case "swFiltro":
 
                 bFiltro = !bFiltro;
-
+                
+                $("#lblFiltro").css(bFiltro?{"color":"white"}:{"color":"gray"});
 
                 $.get(bFiltro ? "/filtron" : "/filtroff")
 
@@ -390,6 +391,9 @@ const app = {
             case "swCalentador":
 
                 bCalentador = !bCalentador;
+
+                $("#lblCalentador").css(bCalentador?{"color":"white"}:{"color":"gray"});
+
 
                 $.get(bCalentador ? "/calentadoron" : "/calentadoroff")
 
@@ -410,6 +414,8 @@ const app = {
 
                 bAire ^= true;
 
+                $("#lblAire").css( bAire?{"color":"white"}:{"color":"gray"});
+
                 $.get(bAire ? "/aireon" : "/aireoff")
 
                     .done(function (data) {
@@ -426,6 +432,8 @@ const app = {
             case "swMedida":
 
                 bMedida ^= true;
+
+                $("#lblMedida").css( bMedida?{"color":"white"}:{"color":"gray"});
 
                 $.get(bMedida ? "/medidaon" : "/medidaoff")
 
@@ -445,10 +453,12 @@ const app = {
 
                 bAux ^= true;
 
+                $("#lblAux").css(bAux?{"color":"white"}:{"color":"gray"});
+
                 $.get(bAux ? "/auxon" : "/auxoff")
 
                     .done(function (data) {
-
+                        
                         toast("Aux: " + data);
                         console.log("Aux: " + data);
                     })
@@ -483,6 +493,16 @@ const app = {
                 $('#swAire').val(data.aire).flipswitch('refresh');
                 $('#swMedida').val(data.medida).flipswitch('refresh');
                 $('#swAux').val(data.aux).flipswitch('refresh');  
+
+                $("#lblLuzEsp").css(data.luzesp === 'on'?{"color":"white"}:{"color":"gray"});
+                $("#lblLuz").css(data.luz === 'on'?{"color":"white"}:{"color":"gray"});
+                $("#lblBomba").css(data.bomba === 'on'?{"color":"white"}:{"color":"gray"});
+                $("#lblFiltro").css(data.filtro === 'on'?{"color":"white"}:{"color":"gray"});
+                $("#lblCalentador").css(data.calentador === 'on'?{"color":"white"}:{"color":"gray"});
+                $("#lblAire").css(data.aire === 'on'?{"color":"white"}:{"color":"gray"});
+                $("#lblMedida").css(data.medida === 'on'?{"color":"white"}:{"color":"gray"});  
+                $("#lblAux").css(data.aux === 'on'?{"color":"white"}:{"color":"gray"});
+
 
                 console.log(`Estado: Aire ${data.aire},Aux ${data.aux},Bomba ${data.bomba}
                      ,Filtro ${data.filtro},Luz ${data.luz},LuzEsp ${data.luzesp},Calentador ${data.calentador} `);

@@ -41,15 +41,15 @@
 }
 
 .ui-header-fixed {
-    color:whitesmoke !important;
-    font-family: cursive !important;
+    color:white !important;
+    font-family: Couriere !important;
     letter-spacing: 3px !important; 
    /* background: linear-gradient(blue,lightblue) !important;
     background: -webkit-linear-gradient(blue,lightblue) !important;*/
     background-color:black !important;
     -webkit-text-shadow: 0px 0px 15px white !important;
     text-shadow:-0px 0px 9px white !important;
-    font-size :0.9em !important;
+    font-size :0.8em !important;
     border-top-color:orange !important; 
     border-top-width: 2px !important;
     border-bottom-color:orange !important; 
@@ -89,9 +89,9 @@
     bottom : 0px !important;  
     left : 0px !important; 
     color: white !important;
-   /* background-color: black !important;*/
+    background-color: black !important;
     /*  display: inline !important;*/ 
-    background-image: url("../img/fondo_cuadricula.jpg") !important;
+   /* background-image: url("../img/fondo_cuadricula.jpg") !important;*/
 }
 
 
@@ -121,7 +121,7 @@
 
 .ui-content  label {
 
-  color:white !important;
+  color:white;
   font-size: 1.2em;
   text-shadow: 0px 0px 15px whitesmoke !important;
   display:inline;
