@@ -34,7 +34,7 @@ const mcp = new MCP23017({
 });
 
 
-app.get('/', function (req, res) {
+app.get('/',  (req, res) => {
      res.sendFile(__dirname + '/www');
 });
 
@@ -225,8 +225,6 @@ app.get('/temp', (req, res) => {
 
      res.send(respuesta);
 
-
-
 });
 
 
@@ -398,7 +396,7 @@ function readAdc() {
 
 }
 
-async function readAdcZero() {
+ const  readAdcZero =  async () => {
 
      var readValue = 0;
      var minValue = 1024;
@@ -428,8 +426,6 @@ async function readAdcZero() {
 
      result = ((maxValue - minValue) * 3.3) / 1024.0;
 
-
-
      let mVperAmp = 66;
      let Voltage = result;
      let VRMS = (Voltage / 2.0) * 0.707;
@@ -437,8 +433,6 @@ async function readAdcZero() {
 
 
      console.log("Amperios %d", AmpsRMS);
-
-
 
 }
 
