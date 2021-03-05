@@ -1,18 +1,24 @@
 #!/usr/bin/bash
 
-temperatura=0
+sensorId='3c01b5562c1b'
 
-salida=$(curl -s http://localhost:3000/temp)
+temperatura=$(cat /sys/bus/w1/devices/28-$sensorId/w1_slave | grep  -E -o ".{0,0}t=.{0,5}" | cut -c 3-)
 
-echo $salida
+echo 'Temperatura: '$temperatura
 
-temperatura=${salida##*:}
-temperatura=${temperatura%*\}}
-temperatura=${temperatura%%.*}
 
-echo $temperatura
 
-if [ $temperatura -lt 25 ]
+#salida=$(curl -s http://localhost:3000/temp)
+
+
+
+#temperatura=${salida##*:}
+#temperatura=${temperatura%*\}}
+#temperatura=${temperatura%%.*}
+
+#echo $temperatura
+
+if [ $temperatura -lt 24600 ]
 then
 
   echo "Acciono Calentador"
